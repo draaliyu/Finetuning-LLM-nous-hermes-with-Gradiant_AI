@@ -3,8 +3,8 @@ from gradientai import Gradient
 import os
 
 # Set environment variables for Gradient workspace and access token
-os.environ['GRADIENT_WORKSPACE_ID'] = 'e55764b0-7843-46d4-8d07-f027e1381ed9_workspace'
-os.environ['GRADIENT_ACCESS_TOKEN'] = 'jHV73v4UAEpTdnwDBB3ghNUJJV53ItfE'
+os.environ['GRADIENT_WORKSPACE_ID'] = 'your workspace di here'
+os.environ['GRADIENT_ACCESS_TOKEN'] = 'your generated acc token here'
 
 def load_model_info(file_path='model_info.json'):
     """Load model information from a JSON file."""
