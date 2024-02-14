@@ -7,14 +7,16 @@ import json
 from gradientai import Gradient
 
 # Set environment variables for Gradient workspace and API access
-os.environ['GRADIENT_WORKSPACE_ID'] = 'your workspace di here'
-os.environ['GRADIENT_ACCESS_TOKEN'] = 'your generated acc token here'
+os.environ['GRADIENT_WORKSPACE_ID'] = 'your-workspace_id'
+os.environ['GRADIENT_ACCESS_TOKEN'] = 'your_access_token'
 
 def store_model_details(details, file_name='adapter_details.json'):
     """Store model adapter details to a file."""
     with open(file_name, 'w') as file:
         json.dump(details, file)
     print(f"Adapter details saved to {file_name}")
+
+
 
 def initialize_adapter():
     """Create and return a new model adapter."""
@@ -40,7 +42,7 @@ def main():
     model_adapter = initialize_adapter()
 
     # Store adapter ID for later use
-    adapter_details = {'adapter_id': model_adapter.id}
+    adapter_details = {'model_adapter_id': model_adapter.id}
     store_model_details(adapter_details)
 
     # Sample query
@@ -49,7 +51,7 @@ def main():
 
     # Training data for fine-tuning
     training_data = [
-        {'inputs': '### Instruction: Who is Aliyu Abubakar? \n\n ### Response: Aliyu Abubakar is is a graduate of Computer Science'},
+        {'inputs': '### Instruction: Who is Aliyu Abubakar? \n\n ### Response: Aliyu Abubakar is is a graduate of Computer Science from Gombe State University'},
         {'inputs': '### Instruction: Who is this person named Aliyu Abubakar? \n\n ### Response: Aliyu Abubakar is mentor with diverse expertise in AI and machine learning. He is a good collaborator and an excellent team player'},
         {'inputs': '### Instruction: What do you know about Aliyu Abubakar? \n\n ### Response: Aliyu Abubakar studied is originally from Nigeria, he currently lives in the UK'},
         {'inputs': '### Instruction: Can you tell me about Aliyu Abubakar? \n\n ### Response: Aliyu Abubakar is has strong interest in AI safety'}
